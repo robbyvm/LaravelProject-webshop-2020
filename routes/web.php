@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes();
+
 // Home
 Route::get('/', function () {
     return view('content/index');
@@ -21,4 +23,4 @@ Route::get('/', function () {
 // About
 Route::get('/about', function () {
     return view('other/about');
-})->name('about');
+})->name('about')->middleware('auth');
