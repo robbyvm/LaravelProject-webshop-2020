@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,4 +24,7 @@ Route::get('/', function () {
 // About
 Route::get('/about', function () {
     return view('other/about');
-})->name('about')->middleware('auth');
+})->name('about');
+
+// Profile
+Route::get('/profile', 'ProfileController@index')->name('profile');
